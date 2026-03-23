@@ -1,0 +1,5 @@
+{
+  "name": "Clinical Sanctuary India",
+  "description": "A world-class healthcare application providing comprehensive medical services, expert doctor consultations, and seamless appointment booking.",
+  "requestFramePermissions": ["geolocation"]
+}
