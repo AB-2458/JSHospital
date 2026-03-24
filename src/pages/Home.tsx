@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Shield, 
-  Clock, 
-  Award, 
-  Users, 
-  Heart, 
-  Activity, 
-  Baby, 
-  Brain, 
+import {
+  ArrowRight,
+  Shield,
+  Clock,
+  Award,
+  Users,
+  Heart,
+  Activity,
+  Baby,
+  Brain,
   Star,
   Play,
   CheckCircle2,
@@ -25,9 +25,10 @@ const Hero = () => {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000" 
-          alt="Hospital Corridor" 
+        <img
+          /*src="./assets/images/Beds.jpeg"*/
+          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=2000"
+          alt="Hospital Corridor"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
@@ -36,7 +37,7 @@ const Hero = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="max-w-3xl">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -46,7 +47,7 @@ const Hero = () => {
             <span className="text-white text-sm font-bold tracking-wide uppercase">NABH Accredited Healthcare</span>
           </motion.div>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -56,29 +57,29 @@ const Hero = () => {
             Trust that <span className="text-secondary">Heals</span>.
           </motion.h1>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             className="text-xl text-white/80 leading-relaxed mb-10 max-w-xl"
           >
-            Experience world-class medical excellence at Clinical Sanctuary. We combine cutting-edge technology with compassionate care to ensure your journey to wellness is seamless.
+            Experience world-class medical excellence at JS Hospital. We combine cutting-edge technology with compassionate care to ensure your journey to wellness is seamless.
           </motion.p>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Link 
-              to="/booking" 
+            <Link
+              to="/booking"
               className="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 transition-all transform hover:scale-105 shadow-2xl"
             >
               Book Appointment <ArrowRight size={20} />
             </Link>
-            <a 
-              href="tel:+911800726288" 
+            <a
+              href="tel:+917745849680"
               className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-white/20 transition-all"
             >
               <Phone size={20} /> Call Now
@@ -86,17 +87,17 @@ const Hero = () => {
           </motion.div>
 
           {/* Stats */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-10 border-t border-white/10"
           >
             {[
-              { label: 'Years of Trust', value: '25+' },
-              { label: 'Expert Doctors', value: '500+' },
-              { label: 'Patients Healed', value: '1M+' },
-              { label: 'Patient Rating', value: '4.8/5' },
+              { label: 'Years of Trust', value: '10+' },
+              { label: 'Expert Doctors', value: '20+' },
+              { label: 'Patients Healed', value: '5000+' },
+              { label: 'Patient Rating', value: '4.5/5' },
             ].map((stat, i) => (
               <div key={i}>
                 <div className="text-3xl font-display font-bold text-white mb-1">{stat.value}</div>
@@ -108,7 +109,7 @@ const Hero = () => {
       </div>
 
       {/* Floating Video Preview */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.8 }}
@@ -116,9 +117,9 @@ const Hero = () => {
       >
         <div className="relative group cursor-pointer">
           <div className="w-64 h-40 rounded-3xl overflow-hidden border-4 border-white/10 shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=400" 
-              alt="Video Preview" 
+            <img
+              src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=400"
+              alt="Video Preview"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-slate-900/40 flex items-center justify-center">
@@ -163,7 +164,7 @@ const CentersOfExcellence = () => {
           {CENTERS_OF_EXCELLENCE.map((center, i) => {
             const Icon = icons[center.icon as keyof typeof icons];
             return (
-              <motion.div 
+              <motion.div
                 key={center.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -185,7 +186,7 @@ const CentersOfExcellence = () => {
                     Learn More <ChevronRight size={18} />
                   </Link>
                 </div>
-                
+
                 {/* Background Pattern */}
                 <div className="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
                   <Icon size={120} />
@@ -199,7 +200,7 @@ const CentersOfExcellence = () => {
   );
 };
 
-const SanctuaryDifference = () => {
+const HospitalDifference = () => {
   return (
     <section className="py-24 bg-slate-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -207,35 +208,36 @@ const SanctuaryDifference = () => {
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4 pt-12">
-                <img 
-                  src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=400&h=500" 
-                  alt="Hospital Facility" 
+                <img
+                  src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=400&h=500"
+                  alt="Hospital Facility"
                   className="rounded-3xl shadow-2xl w-full object-cover h-64"
                   referrerPolicy="no-referrer"
                 />
-                <img 
-                  src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=400&h=400" 
-                  alt="Patient Care" 
+                <img
+                  src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&q=80&w=400&h=400"
+                  alt="Patient Care"
                   className="rounded-3xl shadow-2xl w-full object-cover h-48"
                   referrerPolicy="no-referrer"
                 />
               </div>
               <div className="space-y-4">
-                <img 
-                  src="https://images.unsplash.com/photo-1504813184591-01592fd03cfd?auto=format&fit=crop&q=80&w=400&h=400" 
-                  alt="Modern Equipment" 
+                <img
+                  //src="https://images.unsplash.com/photo-1504813184591-01592fd03cfd?auto=format&fit=crop&q=80&w=400&h=400"
+                  src="../assets/images/Beds2.jpeg"
+                  alt="Modern Equipment"
                   className="rounded-3xl shadow-2xl w-full object-cover h-48"
                   referrerPolicy="no-referrer"
                 />
-                <img 
-                  src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80&w=400&h=500" 
-                  alt="Doctor Consulting" 
+                <img
+                  src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&q=80&w=400&h=500"
+                  alt="Doctor Consulting"
                   className="rounded-3xl shadow-2xl w-full object-cover h-64"
                   referrerPolicy="no-referrer"
                 />
               </div>
             </div>
-            
+
             {/* Floating Badge */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-3xl shadow-2xl border border-slate-100 flex items-center gap-4">
               <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center">
@@ -251,7 +253,7 @@ const SanctuaryDifference = () => {
           <div>
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Why Choose Us</span>
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-slate-900 leading-tight mb-8">
-              The Sanctuary <span className="text-primary">Difference</span>
+              The JS Hospital <span className="text-primary">Difference</span>
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-10">
               We provide a healing environment that goes beyond medical treatment. Our holistic approach ensures that every patient feels supported, cared for, and empowered.
@@ -303,8 +305,8 @@ const Specialists = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {DOCTORS.map((doctor, i) => (
-            <motion.div 
+          {DOCTORS.slice(0, 4).map((doctor, i) => (
+            <motion.div
               key={doctor.id}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -313,9 +315,9 @@ const Specialists = () => {
               className="group"
             >
               <div className="relative rounded-3xl overflow-hidden mb-6 aspect-[4/5] shadow-lg">
-                <img 
-                  src={doctor.image} 
-                  alt={doctor.name} 
+                <img
+                  src={doctor.image}
+                  alt={doctor.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
@@ -325,7 +327,7 @@ const Specialists = () => {
                   </Link>
                 </div>
                 {doctor.availableToday && (
-                  <div className="absolute top-4 left-4 bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg">
+                  <div className="absolute top-4 left-4 bg-blue-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg">
                     Available Today
                   </div>
                 )}
@@ -349,8 +351,10 @@ const Specialists = () => {
 };
 
 const Testimonials = () => {
+  const displayedTestimonials = TESTIMONIALS.slice(0, 4);
+
   return (
-    <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
+    <section id="reviews" className="py-24 bg-slate-900 text-white overflow-hidden relative">
       {/* Decorative Background */}
       <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
         <div className="absolute top-20 left-10 w-64 h-64 bg-primary rounded-full blur-[120px]" />
@@ -365,9 +369,9 @@ const Testimonials = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {TESTIMONIALS.map((testimonial, i) => (
-            <motion.div 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+          {displayedTestimonials.map((testimonial, i) => (
+            <motion.div
               key={testimonial.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -384,9 +388,9 @@ const Testimonials = () => {
                 "{testimonial.text}"
               </p>
               <div className="flex items-center gap-4">
-                <img 
-                  src={testimonial.image} 
-                  alt={testimonial.name} 
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
                   className="w-14 h-14 rounded-2xl object-cover border-2 border-primary"
                   referrerPolicy="no-referrer"
                 />
@@ -395,7 +399,7 @@ const Testimonials = () => {
                   <div className="text-sm text-white/40 font-medium">{testimonial.location}</div>
                 </div>
               </div>
-              
+
               {/* Quote Icon */}
               <div className="absolute top-10 right-10 opacity-10">
                 <svg width="40" height="30" viewBox="0 0 40 30" fill="currentColor">
@@ -405,6 +409,17 @@ const Testimonials = () => {
             </motion.div>
           ))}
         </div>
+
+        {TESTIMONIALS.length > 4 && (
+          <div className="mt-16 text-center">
+            <Link
+              to="/reviews"
+              className="bg-primary hover:bg-secondary text-white px-8 py-4 rounded-2xl font-bold transition-all shadow-xl inline-flex items-center gap-2"
+            >
+              Read More Reviews <ChevronRight size={20} />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -437,9 +452,9 @@ const ContactSection = () => {
           <div className="lg:w-1/2 p-12 md:p-20">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Visit Us</span>
             <h2 className="text-4xl md:text-5xl font-display font-extrabold text-white leading-tight mb-12">
-              Visit The <span className="text-primary">Sanctuary</span>
+              Visit JS <span className="text-primary">Hospital</span>
             </h2>
-            
+
             <div className="space-y-10">
               <div className="flex items-start gap-6">
                 <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center shrink-0">
@@ -448,8 +463,8 @@ const ContactSection = () => {
                 <div>
                   <h4 className="text-xl font-display font-bold text-white mb-2">Our Location</h4>
                   <p className="text-white/60 leading-relaxed">
-                    123 Sanctuary Road, Health City,<br />
-                    Mumbai, Maharashtra 400001
+                    1st floor, Bhuruk Prestige, Navale Brg, behind Hotel Deccan Pavilion,<br />
+                    Narhe, Pune, Maharashtra 411041
                   </p>
                 </div>
               </div>
@@ -461,8 +476,8 @@ const ContactSection = () => {
                 <div>
                   <h4 className="text-xl font-display font-bold text-white mb-2">Contact Details</h4>
                   <p className="text-white/60 leading-relaxed">
-                    Emergency: +91 1800-SANCTUARY<br />
-                    General: +91 22 1234 5678
+                    Emergency: +91 7745849680<br />
+                    Phone: +91 7745849680
                   </p>
                 </div>
               </div>
@@ -491,13 +506,13 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="lg:w-1/2 h-[400px] lg:h-auto relative">
+          <div className="lg:w-1/2 h-[400px] lg:h-auto relative rounded-r-[3rem] overflow-hidden">
             {/* Map Placeholder */}
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.482270928424!2d72.82361717520448!3d19.04252608215579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9410830616d%3A0x111b6330414c2012!2sLilavati%20Hospital%20And%20Research%20Centre!5e0!3m2!1sen!2sin!4v1711194321234!5m2!1sen!2sin" 
-              className="w-full h-full border-0 grayscale invert opacity-80"
-              allowFullScreen 
-              loading="lazy" 
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6904.845737599021!2d73.82318170661634!3d18.46022800059472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2954bcce3fe97%3A0xa93f4ba9766fe85e!2sJS%20HOSPITAL!5e0!3m2!1sen!2sin!4v1774348949056!5m2!1sen!2sin"
+              className="w-full h-full border-0"
+              allowFullScreen
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
@@ -512,7 +527,7 @@ export const Home = () => {
     <div className="bg-white">
       <Hero />
       <CentersOfExcellence />
-      <SanctuaryDifference />
+      <HospitalDifference />
       <Specialists />
       <Testimonials />
       <InsuranceMarquee />

@@ -12,6 +12,7 @@ import { Booking } from './pages/Booking';
 import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { Contact } from './pages/Contact';
+import { Reviews } from './pages/Reviews';
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/reviews" element={<Reviews />} />
         </Routes>
       </Layout>
     </Router>

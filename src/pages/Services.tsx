@@ -57,7 +57,7 @@ const Hero = () => {
             transition={{ delay: 0.3 }}
             className="text-xl text-slate-500 leading-relaxed mb-12"
           >
-            From preventive checkups to complex surgeries, Clinical Sanctuary offers a wide range of medical services delivered by world-class experts.
+            From preventive checkups to complex surgeries, JS Hospital offers a wide range of medical services delivered by world-class experts.
           </motion.p>
 
           <div className="flex flex-wrap gap-4">
@@ -251,7 +251,7 @@ export const Services = () => {
                   Our medical triage team can help you identify the right department and specialist for your symptoms.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <a href="tel:+911800726288" className="bg-white text-primary px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-100 transition-all flex items-center gap-2">
+                  <a href="tel:+917745849680" className="bg-white text-primary px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-100 transition-all flex items-center gap-2">
                     <Phone size={20} /> Call Triage Team
                   </a>
                   <Link to="/booking" className="bg-white/10 border border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/20 transition-all">

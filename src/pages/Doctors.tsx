@@ -38,7 +38,7 @@ const DoctorCard = ({ doctor }: any) => {
           />
           <div className="absolute top-4 left-4">
             {doctor.availableToday ? (
-              <div className="bg-emerald-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 backdrop-blur-md">
+              <div className="bg-blue-500 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 backdrop-blur-md">
                 <div className="w-1.5 h-1.5 bg-white rounded-full animate-pulse" />
                 Available Today
               </div>
@@ -229,7 +229,7 @@ const FilterSidebar = ({ activeFilters, setActiveFilters }: { activeFilters: any
           <p className="text-white/80 text-sm leading-relaxed mb-6">
             Not sure which specialist to choose? Our medical coordinators can help you find the right doctor.
           </p>
-          <a href="tel:+911800726288" className="inline-flex items-center gap-2 font-bold text-sm bg-white text-primary px-4 py-2 rounded-lg">
+          <a href="tel:+917745849680" className="inline-flex items-center gap-2 font-bold text-sm bg-white text-primary px-4 py-2 rounded-lg">
             Call Coordinator
           </a>
         </div>

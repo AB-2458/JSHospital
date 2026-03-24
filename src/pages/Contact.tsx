@@ -61,9 +61,9 @@ const Hero = () => {
 
 const ContactCards = () => {
   const contactInfo = [
-    { title: 'Emergency Hotline', value: '1800-SANCTUARY', icon: Phone, color: 'bg-emergency' },
-    { title: 'General Inquiries', value: '+91 22 1234 5678', icon: MessageSquare, color: 'bg-primary' },
-    { title: 'Email Support', value: 'care@clinicalsanctuary.in', icon: Mail, color: 'bg-secondary' },
+    { title: 'Emergency Hotline', value: '7745849680', icon: Phone, color: 'bg-emergency' },
+    { title: 'General Inquiries', value: '+91 7745849680', icon: MessageSquare, color: 'bg-primary' },
+    { title: 'Email Support', value: 'care@jshospital.in', icon: Mail, color: 'bg-secondary' },
     { title: 'Working Hours', value: '24/7 Emergency Services', icon: Clock, color: 'bg-slate-900' },
   ];
 
@@ -149,7 +149,7 @@ const ContactForm = () => {
             <div>
               <h3 className="text-3xl font-display font-extrabold text-white mb-8">Connect with Us</h3>
               <p className="text-white/60 leading-relaxed mb-12">
-                Follow us on social media for the latest health tips, medical breakthroughs, and sanctuary updates.
+                Follow us on social media for the latest health tips, medical breakthroughs, and hospital updates.
               </p>
               
               <div className="space-y-8">
@@ -159,7 +159,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="text-white font-bold">Facebook</h4>
-                    <p className="text-white/40 text-sm">@clinicalsanctuaryindia</p>
+                    <p className="text-white/40 text-sm">@jshospitalindia</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-6 group cursor-pointer">
@@ -168,7 +168,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="text-white font-bold">Twitter</h4>
-                    <p className="text-white/40 text-sm">@thesanctuary_in</p>
+                    <p className="text-white/40 text-sm">@jshospital_in</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-6 group cursor-pointer">
@@ -177,7 +177,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="text-white font-bold">Instagram</h4>
-                    <p className="text-white/40 text-sm">@clinicalsanctuary</p>
+                    <p className="text-white/40 text-sm">@jshospital</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-6 group cursor-pointer">
@@ -186,7 +186,7 @@ const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="text-white font-bold">LinkedIn</h4>
-                    <p className="text-white/40 text-sm">Clinical Sanctuary India</p>
+                    <p className="text-white/40 text-sm">JS Hospital India</p>
                   </div>
                 </div>
               </div>
@@ -194,13 +194,13 @@ const ContactForm = () => {
 
             <div className="mt-20 p-8 bg-primary/10 rounded-3xl border border-primary/20">
               <p className="text-white font-bold italic">
-                "Your health is our sanctuary. We are committed to providing you with the best care possible."
+                "Your health is our priority. We are committed to providing you with the best care possible."
               </p>
               <div className="mt-4 flex items-center gap-3">
                 <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
                   <ShieldCheck className="text-white" size={20} />
                 </div>
-                <span className="text-white/60 text-sm font-bold uppercase tracking-widest">The Sanctuary Team</span>
+                <span className="text-white/60 text-sm font-bold uppercase tracking-widest">The JS Hospital Team</span>
               </div>
             </div>
           </div>
@@ -215,14 +215,14 @@ const MapSection = () => {
     <section className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-display font-extrabold text-slate-900 mb-4">Visit Our Sanctuary</h2>
+          <h2 className="text-3xl font-display font-extrabold text-slate-900 mb-4">Visit Our Hospital</h2>
           <p className="text-slate-500">Find us at the heart of Health City, Mumbai.</p>
         </div>
         
         <div className="h-[600px] rounded-[3rem] overflow-hidden shadow-2xl border-8 border-white">
           <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.482270928424!2d72.82361717520448!3d19.04252608215579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9410830616d%3A0x111b6330414c2012!2sLilavati%20Hospital%20And%20Research%20Centre!5e0!3m2!1sen!2sin!4v1711194321234!5m2!1sen!2sin" 
-            className="w-full h-full border-0 grayscale invert opacity-80"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6904.845737599021!2d73.82318170661634!3d18.46022800059472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2954bcce3fe97%3A0xa93f4ba9766fe85e!2sJS%20HOSPITAL!5e0!3m2!1sen!2sin!4v1774348949056!5m2!1sen!2sin" 
+            className="w-full h-full border-0"
             allowFullScreen 
             loading="lazy" 
             referrerPolicy="no-referrer-when-downgrade"

@@ -318,7 +318,7 @@ export const Booking = () => {
                           Confirm Appointment <ArrowRight size={24} />
                         </button>
                         <p className="text-center text-slate-400 text-xs mt-6 flex items-center justify-center gap-2">
-                          <ShieldCheck size={14} /> Your data is encrypted and secure with The Sanctuary.
+                          <ShieldCheck size={14} /> Your data is encrypted and secure with JS Hospital.
                         </p>
                       </div>
                     </motion.div>
