@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { CENTERS_OF_EXCELLENCE, TESTIMONIALS, DOCTORS } from '../constants';
+import bedsImg from "../../assets/images/Beds2.jpeg";
 
 const Hero = () => {
   return (
@@ -224,7 +225,7 @@ const HospitalDifference = () => {
               <div className="space-y-4">
                 <img
                   //src="https://images.unsplash.com/photo-1504813184591-01592fd03cfd?auto=format&fit=crop&q=80&w=400&h=400"
-                  src="../assets/images/Beds2.jpeg"
+                  src={bedsImg}
                   alt="Modern Equipment"
                   className="rounded-3xl shadow-2xl w-full object-cover h-48"
                   referrerPolicy="no-referrer"
