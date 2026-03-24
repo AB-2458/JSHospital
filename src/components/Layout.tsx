@@ -39,6 +39,12 @@ const Navbar = () => {
     document.documentElement.classList.toggle('theme-green');
   };
 
+  const handleLogoClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const navLinks = [
     { name: 'Services', path: '/services' },
     { name: 'Doctors', path: '/doctors' },
@@ -58,7 +64,7 @@ const Navbar = () => {
     <nav className={`fixed left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'top-0 bg-white shadow-md py-3' : 'top-[36px] bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" onClick={handleLogoClick} className="flex items-center gap-2">
             <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
               <Stethoscope className="text-white w-6 h-6" />
             </div>
@@ -156,7 +162,11 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-2">
+            <Link to="/" onClick={() => {
+              if (window.location.pathname === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }} className="flex items-center gap-2">
               <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center">
                 <Stethoscope className="text-white w-6 h-6" />
               </div>
