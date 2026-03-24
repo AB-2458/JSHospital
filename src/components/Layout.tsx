@@ -17,7 +17,8 @@ import {
   Instagram,
   Linkedin,
   Clock,
-  ChevronRight
+  ChevronRight,
+  Palette
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -34,15 +35,27 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleTheme = () => {
+    document.documentElement.classList.toggle('theme-green');
+  };
+
   const navLinks = [
     { name: 'Services', path: '/services' },
     { name: 'Doctors', path: '/doctors' },
+    { name: 'Reviews', path: '/reviews' },
+    { name: 'Book', path: '/booking' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
   ];
 
+  const isHome = location.pathname === '/';
+  const textColorClass = isScrolled || !isHome ? 'text-primary' : 'text-white';
+  const subTextColorClass = isScrolled || !isHome ? 'text-secondary' : 'text-white/80';
+  const navLinkClass = isScrolled || !isHome ? 'text-slate-600' : 'text-white';
+  const iconColorClass = isScrolled || !isHome ? 'text-primary' : 'text-white';
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'}`}>
+    <nav className={`fixed left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'top-0 bg-white shadow-md py-3' : 'top-[36px] bg-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2">
@@ -50,22 +63,28 @@ const Navbar = () => {
               <Stethoscope className="text-white w-6 h-6" />
             </div>
             <div className="flex flex-col">
-              <span className={`font-display font-bold text-xl leading-none ${isScrolled ? 'text-primary' : 'text-white'}`}>Clinical Sanctuary</span>
-              <span className={`text-[10px] tracking-[0.2em] uppercase font-medium ${isScrolled ? 'text-secondary' : 'text-white/80'}`}>India</span>
+              <span className={`font-display font-bold text-xl leading-none ${textColorClass}`}>JS Hospital</span>
+              <span className={`text-[10px] tracking-[0.2em] uppercase font-medium ${subTextColorClass}`}>India</span>
             </div>
           </Link>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link 
                 key={link.path} 
                 to={link.path}
-                className={`font-medium transition-colors hover:text-secondary ${location.pathname === link.path ? 'text-secondary' : isScrolled ? 'text-slate-600' : 'text-white'}`}
+                className={`font-medium transition-colors hover:text-secondary ${location.pathname === link.path ? 'text-secondary' : navLinkClass}`}
               >
                 {link.name}
               </Link>
             ))}
+            <button 
+              onClick={toggleTheme}
+              className={`p-2 rounded-full transition-colors ${(isScrolled || !isHome) ? 'text-primary hover:bg-slate-100' : 'text-white hover:bg-white/10'}`}
+              title="Toggle Theme"
+            >
+              <Palette size={20} />
+            </button>
             <Link 
               to="/booking" 
               className="bg-primary hover:bg-secondary text-white px-6 py-2.5 rounded-full font-semibold transition-all transform hover:scale-105 shadow-lg"
@@ -75,16 +94,24 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden p-2 rounded-lg"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? (
-              <X className={isScrolled ? 'text-primary' : 'text-white'} />
-            ) : (
-              <Menu className={isScrolled ? 'text-primary' : 'text-white'} />
-            )}
-          </button>
+          <div className="md:hidden flex items-center gap-4">
+            <button 
+              onClick={toggleTheme}
+              className="p-2 rounded-lg"
+            >
+              <Palette className={iconColorClass} />
+            </button>
+            <button 
+              className="p-2 rounded-lg"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? (
+                <X className={iconColorClass} />
+              ) : (
+                <Menu className={iconColorClass} />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -134,12 +161,12 @@ const Footer = () => {
                 <Stethoscope className="text-white w-6 h-6" />
               </div>
               <div className="flex flex-col">
-                <span className="font-display font-bold text-xl leading-none">Clinical Sanctuary</span>
+                <span className="font-display font-bold text-xl leading-none">JS Hospital</span>
                 <span className="text-[10px] tracking-[0.2em] uppercase font-medium text-white/60">India</span>
               </div>
             </Link>
             <p className="text-slate-400 leading-relaxed">
-              Leading the way in medical excellence and compassionate care. Our sanctuary is dedicated to your health and well-being.
+              Leading the way in medical excellence and compassionate care. Our hospital is dedicated to your health and well-being.
             </p>
             <div className="flex gap-4">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
@@ -169,15 +196,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-slate-400">
                 <MapPin size={20} className="text-primary shrink-0" />
-                <span>123 Sanctuary Road, Health City,<br />Mumbai, Maharashtra 400001</span>
+                <span>1st floor, Bhuruk Prestige, Navale Brg,<br />behind Hotel Deccan Pavilion, Narhe,<br />Pune, Maharashtra 411041</span>
               </li>
               <li className="flex items-center gap-3 text-slate-400">
                 <Phone size={20} className="text-primary shrink-0" />
-                <span>+91 1800-SANCTUARY</span>
+                <span>+91 7745849680</span>
               </li>
               <li className="flex items-center gap-3 text-slate-400">
                 <Mail size={20} className="text-primary shrink-0" />
-                <span>care@clinicalsanctuary.in</span>
+                <span>care@jshospital.in</span>
               </li>
               <li className="flex items-center gap-3 text-slate-400">
                 <Clock size={20} className="text-primary shrink-0" />
@@ -188,7 +215,7 @@ const Footer = () => {
 
           <div>
             <h4 className="font-display font-bold text-lg mb-6">Newsletter</h4>
-            <p className="text-slate-400 mb-4">Subscribe for health tips and sanctuary updates.</p>
+            <p className="text-slate-400 mb-4">Subscribe for health tips and hospital updates.</p>
             <form className="space-y-3">
               <input 
                 type="email" 
@@ -203,7 +230,7 @@ const Footer = () => {
         </div>
 
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm">
-          <p>© 2026 Clinical Sanctuary India. All rights reserved.</p>
+          <p>© 2026 JS Hospital India. All rights reserved.</p>
           <div className="flex gap-8">
             <Link to="#" className="hover:text-white">Terms of Service</Link>
             <Link to="#" className="hover:text-white">Cookie Policy</Link>
@@ -249,7 +276,7 @@ const MobileBottomNav = () => {
 
 const WhatsAppFAB = () => (
   <a 
-    href="https://wa.me/911234567890" 
+    href="https://wa.me/917745849680" 
     target="_blank" 
     rel="noopener noreferrer"
     className="fixed bottom-24 right-6 md:bottom-10 md:right-10 z-40 bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center group"
@@ -266,7 +293,7 @@ const EmergencyBanner = () => (
     <div className="max-w-7xl mx-auto flex items-center justify-center gap-4">
       <span className="flex items-center gap-2">
         <Phone size={14} fill="currentColor" />
-        EMERGENCY HOTLINE: 1800-SANCTUARY
+        EMERGENCY HOTLINE: 7745849680
       </span>
       <span className="hidden md:inline opacity-60">|</span>
       <span className="hidden md:inline">Ambulance available 24/7 across major cities</span>
