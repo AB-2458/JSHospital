@@ -171,9 +171,9 @@ const CentersOfExcellence = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="group relative overflow-hidden rounded-3xl bg-slate-50 p-8 hover:bg-primary transition-all duration-500"
+                className="group relative overflow-hidden rounded-3xl bg-slate-50 p-8 hover:bg-primary transition-all duration-500 flex flex-col"
               >
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col flex-grow">
                   <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:bg-white/20 transition-colors">
                     <Icon className="text-primary w-8 h-8 group-hover:text-white transition-colors" />
                   </div>
@@ -183,7 +183,7 @@ const CentersOfExcellence = () => {
                   <p className="text-slate-600 group-hover:text-white/80 transition-colors leading-relaxed">
                     {center.description}
                   </p>
-                  <Link to={`/services#${center.id}`} className="mt-8 flex items-center gap-2 text-primary font-bold group-hover:text-white transition-colors">
+                  <Link to={`/services#${center.id}`} className="mt-auto pt-8 flex items-center gap-2 text-primary font-bold group-hover:text-white transition-colors">
                     Learn More <ChevronRight size={18} />
                   </Link>
                 </div>
@@ -378,17 +378,17 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-3xl relative"
+              className="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-3xl relative flex flex-col"
             >
-              <div className="flex gap-1 text-amber-500 mb-8">
+              <div className="flex gap-1 text-amber-500 mb-8 shrink-0">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} size={18} fill="currentColor" />
                 ))}
               </div>
-              <p className="text-lg text-white/80 leading-relaxed italic mb-10">
+              <p className="text-lg text-white/80 leading-relaxed italic mb-10 flex-grow">
                 "{testimonial.text}"
               </p>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mt-auto shrink-0">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}

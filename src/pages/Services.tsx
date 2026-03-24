@@ -103,15 +103,15 @@ const SpecializedWings = () => {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 id={center.id}
-                className="group relative overflow-hidden rounded-[3rem] bg-slate-50 p-12 hover:bg-primary transition-all duration-500"
+                className="group relative overflow-hidden rounded-[3rem] bg-slate-50 p-12 hover:bg-primary transition-all duration-500 h-full flex flex-col"
               >
-                <div className="relative z-10 flex flex-col md:flex-row gap-10">
+                <div className="relative z-10 flex flex-col md:flex-row gap-10 flex-grow">
                   <div className="shrink-0">
                     <div className="w-20 h-20 bg-white rounded-3xl flex items-center justify-center shadow-lg group-hover:bg-white/20 transition-colors">
                       <Icon className="text-primary w-10 h-10 group-hover:text-white transition-colors" />
                     </div>
                   </div>
-                  <div>
+                  <div className="flex flex-col flex-grow">
                     <h3 className="text-3xl font-display font-bold text-slate-900 mb-6 group-hover:text-white transition-colors">
                       {center.title}
                     </h3>
@@ -125,7 +125,7 @@ const SpecializedWings = () => {
                         </li>
                       ))}
                     </ul>
-                    <Link to="/booking" className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-xl font-bold text-sm shadow-xl group-hover:bg-slate-100 transition-all">
+                    <Link to="/booking" className="inline-flex mt-auto w-max items-center gap-2 bg-white text-primary px-6 py-3 rounded-xl font-bold text-sm shadow-xl group-hover:bg-slate-100 transition-all">
                       Consult Specialist <ChevronRight size={16} />
                     </Link>
                   </div>

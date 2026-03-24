@@ -30,17 +30,17 @@ export const Reviews = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.05 }}
-              className="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-3xl relative"
+              className="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-3xl relative flex flex-col"
             >
-              <div className="flex gap-1 text-amber-500 mb-8">
+              <div className="flex gap-1 text-amber-500 mb-8 shrink-0">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} size={18} fill="currentColor" />
                 ))}
               </div>
-              <p className="text-lg text-white/80 leading-relaxed italic mb-10">
+              <p className="text-lg text-white/80 leading-relaxed italic mb-10 flex-grow">
                 "{testimonial.text}"
               </p>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-4 mt-auto shrink-0">
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
